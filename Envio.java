@@ -149,13 +149,16 @@ public class Envio
         }
         else if(getNumeroPaquetes() == 2){
             cadena += paquete1.toString();
+            cadena += "\n";
             cadena += paquete2.toString();
             cadena += "\n";
             cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
         }
         else if(getNumeroPaquetes() == 3){
             cadena += paquete1.toString();
+            cadena += "\n";
             cadena += paquete2.toString();
+            cadena += "\n";
             cadena += paquete3.toString();
             cadena += "\n";
             cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
