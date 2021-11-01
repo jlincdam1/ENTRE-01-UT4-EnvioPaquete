@@ -114,8 +114,10 @@ public class Envio
      *  
      */
     public double calcularCosteTotalEnvio() {
-        //TODO
-       return 0;
+       double pesoFacturable = Math.ceil(paquete1.calcularPesoFacturable() +
+       paquete2.calcularPesoFacturable() + paquete3.calcularPesoFacturable()); 
+       double costeTotal = pesoFacturable * PRECIO_KILO; 
+       return costeTotal;
 
     }
 
