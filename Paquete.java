@@ -107,7 +107,6 @@ public class Paquete
      */
     public Paquete obtenerCopia() {
        Paquete copia = new Paquete(dimension, peso);
-       
        return copia;
 
     }
@@ -117,7 +116,6 @@ public class Paquete
      *  (leer enunciado)
      */
     public String toString() {
-        //TODO
        return null;
 
     }
