@@ -2,10 +2,10 @@
 /**
  *  Representa una dimensión
  *  
- *  @author - 
+ *  @author - Jiacheng Lin
  */
-public class Dimension  
-{
+public class Dimension{
+    
     private double alto;
     private double ancho;
     private double largo;
@@ -45,9 +45,8 @@ public class Dimension
      * Devuelve una copia exacta al objeto actual
      */
     public Dimension obtenerCopia() {
-        //TODO
-        return null;
-
+        Dimension copia = new Dimension(alto, ancho, largo);
+        return copia;
     }
 
     /**
@@ -55,9 +54,14 @@ public class Dimension
      * (leer enunciado)
      */
     public String toString() {
-        //TODO
-        return null;
-
+        String texto = "Alto:";
+        String texto2 = "Ancho:";
+        String texto3 = "Largo:";
+        String cadena = "";
+        cadena += String.format("%20s %10.2f(cm)\n", texto, alto);
+        cadena += String.format("%20s %10.2f(cm)\n", texto2, ancho);
+        cadena += String.format("%20s %10.2f(cm)\n", texto3, largo);
+        return cadena;
     }
 
     /**
