@@ -17,12 +17,10 @@ public class TestEnvio{
         envio.addPaquete(paquete1);
         envio.addPaquete(paquete2);
         System.out.println(envio.toString());
-        System.out.println("");
         System.out.println("----------------------------------------");
         Paquete paquete3 = new Paquete(new Dimension(50, 50, 70), 13);
         envio.addPaquete(paquete3);
         System.out.println(envio.toString());
-        System.out.println("");
         System.out.println("----------------------------------------");
         envio.addPaquete(paquete2.obtenerCopia());
     }
