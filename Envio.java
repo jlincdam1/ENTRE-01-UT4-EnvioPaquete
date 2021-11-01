@@ -92,7 +92,7 @@ public class Envio
             if(getNumeroPaquetes() == 0){
                 paquete1 = paquete;
             }
-            if(getNumeroPaquetes() == 1){
+            else if(getNumeroPaquetes() == 1){
                 paquete2 = paquete;
             }
             else{
@@ -114,10 +114,23 @@ public class Envio
      *  
      */
     public double calcularCosteTotalEnvio() {
-       double pesoFacturable = Math.ceil(paquete1.calcularPesoFacturable() +
-       paquete2.calcularPesoFacturable() + paquete3.calcularPesoFacturable()); 
-       double costeTotal = pesoFacturable * PRECIO_KILO; 
-       return costeTotal;
+        double pesoFacturable = 0;
+        double costeTotal = 0;
+        if(getNumeroPaquetes() == 1){
+            pesoFacturable = Math.ceil(paquete1.calcularPesoFacturable());
+            costeTotal = pesoFacturable * PRECIO_KILO;
+        }
+        else if(getNumeroPaquetes() == 2){
+            pesoFacturable = Math.ceil(paquete1.calcularPesoFacturable() +
+            paquete2.calcularPesoFacturable());
+            costeTotal = pesoFacturable * PRECIO_KILO;
+        }
+        else if(getNumeroPaquetes() == 3){
+            pesoFacturable = Math.ceil(paquete1.calcularPesoFacturable() +
+            paquete2.calcularPesoFacturable() + paquete3.calcularPesoFacturable()); 
+            costeTotal = pesoFacturable * PRECIO_KILO;
+        }
+        return costeTotal;
 
     }
 
@@ -128,20 +141,27 @@ public class Envio
      */
     public String toString() {
         String texto = "Coste total envío:"; 
-        String cadena = "Nº de paquetes: " + getNumeroPaquetes();
+        String cadena = "Nº de paquetes: " + getNumeroPaquetes() + "\n";
         if(getNumeroPaquetes() == 1){
             cadena += paquete1.toString();
+            cadena += "\n";
             cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
         }
-        if(getNumeroPaquetes() == 2){
+        else if(getNumeroPaquetes() == 2){
             cadena += paquete1.toString();
             cadena += paquete2.toString();
+            cadena += "\n";
             cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
         }
-        if(getNumeroPaquetes() == 3){
+        else if(getNumeroPaquetes() == 3){
             cadena += paquete1.toString();
             cadena += paquete2.toString();
             cadena += paquete3.toString();
+            cadena += "\n";
+            cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
+        }
+        else{
+            cadena += "\n";
             cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
         }
         return cadena;
