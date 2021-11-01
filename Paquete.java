@@ -31,8 +31,8 @@ public class Paquete
      */
     public Paquete(double alto, double ancho, double largo)    {
         dimension = new Dimension(alto, ancho, largo);
-        generador = new Random(generador.nextInt(7) + 2);
-        
+        generador = new Random();
+        peso = generador.nextInt(7) + 2;
     }
 
     /**
@@ -106,8 +106,9 @@ public class Paquete
      * Se obtienen copias también de los objetos que contenga
      */
     public Paquete obtenerCopia() {
-        //TODO
-       return null;
+       Paquete copia = new Paquete(dimension, peso);
+       
+       return copia;
 
     }
 
