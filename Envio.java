@@ -133,7 +133,7 @@ public class Envio
        cadena += paquete2.toString();
        cadena += paquete3.toString();
        cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
-       return null;
+       return cadena;
     }
 
     /**
