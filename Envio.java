@@ -127,13 +127,24 @@ public class Envio
      * (leer enunciado)
      */
     public String toString() {
-       String texto = "Coste total envío:"; 
-       String cadena = "Nº de paquetes: ";
-       cadena += paquete1.toString();
-       cadena += paquete2.toString();
-       cadena += paquete3.toString();
-       cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
-       return cadena;
+        String texto = "Coste total envío:"; 
+        String cadena = "Nº de paquetes: " + getNumeroPaquetes();
+        if(getNumeroPaquetes() == 1){
+            cadena += paquete1.toString();
+            cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
+        }
+        if(getNumeroPaquetes() == 2){
+            cadena += paquete1.toString();
+            cadena += paquete2.toString();
+            cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
+        }
+        if(getNumeroPaquetes() == 3){
+            cadena += paquete1.toString();
+            cadena += paquete2.toString();
+            cadena += paquete3.toString();
+            cadena += String.format("%20s %10.2f€\n",texto, calcularCosteTotalEnvio());
+        }
+        return cadena;
     }
 
     /**
