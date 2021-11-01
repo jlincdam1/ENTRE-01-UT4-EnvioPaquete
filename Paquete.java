@@ -20,6 +20,7 @@ public class Paquete
     public Paquete(){
         dimension = new Dimension(40, 30, 50);
         peso = 8;
+        
     }
 
     /**
@@ -31,6 +32,7 @@ public class Paquete
     public Paquete(double alto, double ancho, double largo)    {
         dimension = new Dimension(alto, ancho, largo);
         generador = new Random(generador.nextInt(7) + 2);
+        
     }
 
     /**
@@ -41,6 +43,7 @@ public class Paquete
     public Paquete(Dimension dimension, double peso)    {
         this.dimension = dimension;
         this.peso = peso;
+        
     }
 
     /**
@@ -64,9 +67,10 @@ public class Paquete
      * El volumen = alto x ancho x largo
      */
     public double calcularVolumen() {
-       //TODO
-       return 0;
-
+       double volumen = dimension.getAncho() * dimension.getAlto() 
+       * dimension.getLargo();
+       return volumen;
+       
     }
 
     /**
@@ -74,8 +78,8 @@ public class Paquete
      * Peso volumétrico = volumen del paquete / 5000
      */
     public double calcularPesoVolumetrico() {
-        //TODO
-       return 0;
+       double pesoVolumetrico = calcularVolumen() / 5000; 
+       return pesoVolumetrico;
 
     }
 
@@ -85,8 +89,14 @@ public class Paquete
      *      
      */
     public double calcularPesoFacturable() {
-        //TODO
-       return 0;
+        double pesoFacturable = 0;
+        if(peso > calcularPesoVolumetrico()){
+            pesoFacturable = peso;
+        }
+        else{
+            pesoFacturable = calcularPesoVolumetrico();
+        }
+        return pesoFacturable;
 
     }
 
