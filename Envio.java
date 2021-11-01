@@ -4,7 +4,7 @@
  *  máximo tres
  *  
  * 
- * @author -   
+ * @author - Jiacheng Lin  
  *  
  */
 public class Envio
@@ -55,9 +55,17 @@ public class Envio
      * (dependerá de cuántos paquetes estén a null)
      */
     public int getNumeroPaquetes() {
-        //TODO
-       return 0;
-
+        int numeroPaquetes = 0;
+        if(paquete1 != null){
+            numeroPaquetes ++;
+        }
+        else if(paquete2 != null){
+            numeroPaquetes += 1;
+        }
+        else if(paquete3!= null){
+            numeroPaquetes += 1;
+        }
+        return numeroPaquetes;
     }
 
     /**
