@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * Clase para probar las demás
  * 
@@ -6,27 +6,24 @@
  * 
  */
 public class TestEnvio{
-    
-    private int x;
 
     /**
-     * Constructor for objects of class TestEnvio
+     *  Método main
      */
-    public TestEnvio()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public static void main(String [] args){
+        Paquete paquete1 = new Paquete();
+        Paquete paquete2 = new Paquete(40, 60, 40);
+        Envio envio = new Envio();
+        envio.addPaquete(paquete1);
+        envio.addPaquete(paquete2);
+        System.out.println(envio.toString());
+        System.out.println("");
+        System.out.println("----------------------------------------");
+        Paquete paquete3 = new Paquete(new Dimension(50, 50, 70), 13);
+        envio.addPaquete(paquete3);
+        System.out.println(envio.toString());
+        System.out.println("");
+        System.out.println("----------------------------------------");
+        envio.addPaquete(paquete2.obtenerCopia());
     }
 }
