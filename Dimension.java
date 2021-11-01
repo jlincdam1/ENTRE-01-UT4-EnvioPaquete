@@ -57,8 +57,7 @@ public class Dimension{
         String texto = "Alto:";
         String texto2 = "Ancho:";
         String texto3 = "Largo:";
-        String cadena = "";
-        cadena += String.format("%20s %10.2f(cm)\n", texto, alto);
+        String cadena = String.format("%20s %10.2f(cm)\n", texto, alto);
         cadena += String.format("%20s %10.2f(cm)\n", texto2, ancho);
         cadena += String.format("%20s %10.2f(cm)\n", texto3, largo);
         return cadena;
