@@ -59,10 +59,10 @@ public class Envio
         if(paquete1 != null){
             numeroPaquetes ++;
         }
-        else if(paquete2 != null){
+        if(paquete2 != null){
             numeroPaquetes += 1;
         }
-        else if(paquete3!= null){
+        if(paquete3 != null){
             numeroPaquetes += 1;
         }
         return numeroPaquetes;
