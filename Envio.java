@@ -60,10 +60,10 @@ public class Envio
             numeroPaquetes ++;
         }
         if(paquete2 != null){
-            numeroPaquetes += 1;
+            numeroPaquetes ++;
         }
         if(paquete3 != null){
-            numeroPaquetes += 1;
+            numeroPaquetes ++;
         }
         return numeroPaquetes;
     }
